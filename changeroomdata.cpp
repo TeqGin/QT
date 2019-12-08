@@ -1,6 +1,8 @@
 #include "changeroomdata.h"
 #include "ui_changeroomdata.h"
 #include"chargeface.h"
+#include"whole.h"
+#include"date.h"
 
 ChangeRoomData::ChangeRoomData(QWidget *parent) :
     QDialog(parent),
@@ -22,6 +24,8 @@ ChangeRoomData::~ChangeRoomData()
 void ChangeRoomData::returnMain(){
     chargeFace=new ChargeFace;
     this->close();
+    UserSql userSql;
+    chargeFace->showName(userSql.findUserById(Whole::id).getName());
     chargeFace->show();
 
 }
@@ -61,6 +65,7 @@ void ChangeRoomData::removeRoom(){
     QAbstractItemModel * model=roomTable->model();
     QModelIndex index=model->index(row,0);
 
+
     //获取roomId
     int roomId=model->data(index).toInt();
 
@@ -69,6 +74,7 @@ void ChangeRoomData::removeRoom(){
     RoomSql roomSql;
     Operata operata;
     roomSql.deleteById(roomId);
+
     //QString和int相互转换使用QString的静态方法
     QMessageBox::about(this,"删除成功","删除"+QString::number(roomId)+"房间成功");
     std::vector<Room> roomVector=roomSql.findAllRoom();
@@ -89,5 +95,15 @@ void ChangeRoomData::addRoom(){
     operata.showRoomData(roomTable,roomVector,this,x,y);
 }
 void ChangeRoomData::outputData(){
+    QAbstractItemModel * model=roomTable->model();
+    Operata operata;
 
+    //把文件导出到上一级目录中（到当前目录失败）
+    QString fileName="../"+Date().toString()+"导出的房间数据"+".txt";
+    bool isSuccess=operata.writeIntoTxt(model,fileName);
+    if(isSuccess){
+        QMessageBox::about(this,"成功","导出成功");
+    }else{
+        QMessageBox::warning(this,"失败","导出失败");
+    }
 }

@@ -15,6 +15,8 @@ class Operata
 public:
     Operata();
     int showRoomData(QTableView *roomTable,std::vector<Room>roomVector,QDialog * parent,int x=0,int y=70);
+    bool outDataToExcel(const QAbstractItemModel * model,const QString & fileName);
+    bool writeIntoTxt(const QAbstractItemModel * model,const QString & fileName);
 };
 
 #endif // OPERATA_H

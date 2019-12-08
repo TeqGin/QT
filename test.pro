@@ -5,7 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui
-QT       +=sql
+QT       += sql
+QT       += axcontainer
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 CONFIG += c++11
+CONFIG += qaxcontainer
 
 SOURCES += \
         addorchangeroom.cpp \
@@ -38,6 +40,7 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
         operata.cpp \
+        outtoexcel.cpp \
         person.cpp \
         record.cpp \
         recordsql.cpp \
@@ -61,6 +64,7 @@ HEADERS += \
         loginface.h \
         mainwindow.h \
         operata.h \
+        outtoexcel.h \
         person.h \
         record.h \
         recordsql.h \
@@ -85,3 +89,8 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
+
+RESOURCES += \
+    img.qrc

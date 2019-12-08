@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>房间数据查询</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:url(:/new/prefix1/bg.jpg);</string>
+  </property>
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
@@ -23,7 +26,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 9pt &quot;楷体&quot;;
+    <string notr="true">background-image:url();
+font: 9pt &quot;楷体&quot;;
 font: 22pt &quot;AcadEref&quot;;</string>
    </property>
    <property name="text">
@@ -34,10 +38,13 @@ font: 22pt &quot;AcadEref&quot;;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>90</y>
+     <y>70</y>
      <width>121</width>
      <height>421</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image:url();</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -136,6 +143,9 @@ border-radius:15px;
       <height>191</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-image:url();</string>
+    </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
     </property>
@@ -146,7 +156,7 @@ border-radius:15px;
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>70</y>
+       <y>120</y>
        <width>101</width>
        <height>31</height>
       </rect>
@@ -167,7 +177,7 @@ border-radius:15px;
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>20</y>
+       <y>70</y>
        <width>101</width>
        <height>31</height>
       </rect>
@@ -182,6 +192,26 @@ border-radius:15px;
      </property>
      <property name="text">
       <string>查找报表数据</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="dataOutput">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>101</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background:#03a9f4;
+color:#fff;
+border-radius:15px;
+}</string>
+     </property>
+     <property name="text">
+      <string>数据导出</string>
      </property>
     </widget>
    </widget>

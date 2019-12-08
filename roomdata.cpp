@@ -1,6 +1,7 @@
 #include "roomdata.h"
 #include "ui_roomdata.h"
 #include"chargeface.h"
+#include"whole.h"
 #include<QInputDialog>
 
 RoomData::RoomData(QWidget *parent) :
@@ -10,6 +11,7 @@ RoomData::RoomData(QWidget *parent) :
     ui->setupUi(this);
     connect(this->ui->returnMain,SIGNAL(clicked()),this,SLOT(returnMain()));
     connect(this->ui->submit,SIGNAL(clicked()),this,SLOT(submitSelect()));
+    connect(this->ui->dataOutput,SIGNAL(clicked()),this,SLOT(outputData()));
 }
 
 RoomData::~RoomData()
@@ -20,6 +22,8 @@ RoomData::~RoomData()
 void RoomData::returnMain(){
     chargeFace=new ChargeFace;
     this->close();
+    UserSql userSql;
+    chargeFace->showName(userSql.findUserById(Whole::id).getName());
     chargeFace->show();
     chargeFace->exec();
     chargeFace->close();
@@ -113,4 +117,18 @@ void RoomData::submitSelect(){
     }
     QMessageBox::about(this,"查找成功","查找成功！");
     return ;
+}
+
+void RoomData::outputData(){
+    QAbstractItemModel * model=roomTable->model();
+    Operata operata;
+
+    //把文件导出到上一级目录中（到当前目录失败）
+    QString fileName="../"+Date().toString()+"导出的房间数据"+".txt";
+    bool isSuccess=operata.writeIntoTxt(model,fileName);
+    if(isSuccess){
+        QMessageBox::about(this,"成功","导出成功");
+    }else{
+        QMessageBox::warning(this,"失败","导出失败");
+    }
 }

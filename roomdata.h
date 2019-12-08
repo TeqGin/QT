@@ -20,6 +20,7 @@ public:
 private slots:
     void returnMain();
     void submitSelect();
+    void outputData();
 
 
 private:

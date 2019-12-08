@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>422</width>
-    <height>333</height>
+    <width>420</width>
+    <height>327</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>酒店管理系统登录界面</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(42, 42, 42);
+   <string notr="true">background:url(:/new/prefix1/bg.jpg);
 border-radius:15px;
 QPushButton{border-radius:25px;};
 
@@ -30,17 +30,18 @@ border-bottom-right-radius:10px;</string>
    <widget class="QFrame" name="frame_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>401</width>
-      <height>271</height>
+      <x>30</x>
+      <y>0</y>
+      <width>361</width>
+      <height>261</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QFrame{
-background:black;
+     <string notr="true">background-image:url();
+QFrame{
+
 border-radius:15px;
-}v</string>
+};</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -51,7 +52,7 @@ border-radius:15px;
     <widget class="QFrame" name="frame">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>40</x>
        <y>180</y>
        <width>231</width>
        <height>81</height>
@@ -93,7 +94,7 @@ border-radius:15px;
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>30</y>
         <width>71</width>
         <height>31</height>
@@ -115,7 +116,7 @@ border-radius:15px;
     <widget class="QLineEdit" name="password">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>120</x>
        <y>150</y>
        <width>141</width>
        <height>31</height>
@@ -123,10 +124,9 @@ border-radius:15px;
      </property>
      <property name="styleSheet">
       <string notr="true">border-radius:15px;
-background-color: rgb(255, 255, 255);
-border-bottom-color: rgb(0, 0, 0);
-border-color: rgb(255, 255, 255);
-color:#03a9f4;</string>
+background:#03a9f4;
+
+color: rgb(255, 255, 255);</string>
      </property>
      <property name="echoMode">
       <enum>QLineEdit::Password</enum>
@@ -138,24 +138,25 @@ color:#03a9f4;</string>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>160</y>
-       <width>31</width>
-       <height>16</height>
+       <x>70</x>
+       <y>155</y>
+       <width>41</width>
+       <height>21</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-font: 9pt &quot;楷体&quot;;</string>
+      <string notr="true">
+font: 12pt &quot;楷体&quot;;
+color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
-      <string>密码</string>
+      <string>密码:</string>
      </property>
     </widget>
     <widget class="QLineEdit" name="login">
      <property name="geometry">
       <rect>
-       <x>160</x>
+       <x>120</x>
        <y>100</y>
        <width>141</width>
        <height>31</height>
@@ -163,10 +164,9 @@ font: 9pt &quot;楷体&quot;;</string>
      </property>
      <property name="styleSheet">
       <string notr="true">border-radius:15px;
-background-color: rgb(255, 255, 255);
-border-bottom-color: rgb(0, 0, 0);
-border-color: rgb(255, 255, 255);
-color:#03a9f4;</string>
+background:#03a9f4;
+
+color: rgb(255, 255, 255);</string>
      </property>
      <property name="placeholderText">
       <string>请输入账号</string>
@@ -175,32 +175,32 @@ color:#03a9f4;</string>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>110</y>
-       <width>31</width>
-       <height>16</height>
+       <x>70</x>
+       <y>100</y>
+       <width>41</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">font: 9pt &quot;楷体&quot;;
-color: rgb(255, 255, 255);</string>
+      <string notr="true">font: 12pt &quot;楷体&quot;;
+color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
-      <string>账号</string>
+      <string>账号:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>10</y>
+       <x>140</x>
+       <y>20</y>
        <width>81</width>
        <height>41</height>
       </rect>
      </property>
      <property name="styleSheet">
       <string notr="true">font: 14pt &quot;楷体&quot;;
-color: rgb(255, 255, 255);</string>
+color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
       <string>登录界面</string>
@@ -213,7 +213,7 @@ color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>422</width>
+     <width>420</width>
      <height>23</height>
     </rect>
    </property>

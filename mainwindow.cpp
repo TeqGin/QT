@@ -56,6 +56,10 @@ void MainWindow::login(){
     QString id=this->ui->login->text();
     QString pass=this->ui->password->text();
     bool flag=false;
+    if(personVector.size()==0){
+        QMessageBox::warning(this,"错误","没有数据");
+        return ;
+    }
     for(unsigned int i=0;i<personVector.size();i++){
         if(personVector[i].getPersonId()==id&&personVector[i].getPassword()==pass){
             flag=true;
@@ -79,6 +83,8 @@ void MainWindow::login(){
             Whole::id=person.getPersonId();
 
             //globalId=person.getPersonId();
+            QString name=person.getName();
+            chargeFace.showName(name);
             chargeFace.show();
             chargeFace.exec();
         }

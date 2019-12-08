@@ -42,3 +42,7 @@ void ChargeFace::changeData(){
 void ChargeFace::eraseRoom(){
 
 }
+
+void ChargeFace::showName(QString name){
+    this->ui->login_name->setText("你好,"+name+"管理员");
+}

@@ -18,6 +18,7 @@ public:
     explicit ChargeFace(QWidget *parent = nullptr);
     ~ChargeFace();
     void eraseRoom();
+    void showName(QString name);
 
 
 private slots:

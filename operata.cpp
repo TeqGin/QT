@@ -1,4 +1,9 @@
 #include "operata.h"
+#include"outtoexcel.h"
+#include"date.h"
+#include<QFile>
+#include<QDebug>
+#include<QDateTime>
 
 
 Operata::Operata()
@@ -62,4 +67,41 @@ int Operata::showRoomData(QTableView *roomTable,std::vector<Room>roomVector,QDia
   QStringList labels = QObject::trUtf8("房号,折扣,价格,房间类型,房间状态,入住客户").simplified().split(",");
    model->setHorizontalHeaderLabels(labels);
    return 0;
+}
+
+
+bool Operata::outDataToExcel(const QAbstractItemModel *model, const QString &fileName){
+    //新建excel
+     outToExcel toExcel;
+     toExcel.newExcel(fileName);
+     toExcel.appendSheet("房间数据");
+     int row =model->rowCount();
+     int column=model->columnCount();
+     for (int i=0;i<row;i++) {
+         for(int j=0;j<column;j++){
+             QModelIndex idnex=model->index(i,j);
+             toExcel.setCellValue(i,j,model->data(idnex).toString());
+         }
+     }
+     toExcel.saveExcel(fileName);
+     toExcel.freeExcel();
+     return true;
+}
+
+bool Operata::writeIntoTxt(const QAbstractItemModel *model, const QString &fileName){
+    QFile file(fileName);
+    if(file.open(QIODevice::WriteOnly|QIODevice::Text)){
+        QTextStream out(&file);
+        int row =model->rowCount();
+        int column=model->columnCount();
+        for(int i=0;i<row;i++){
+            for(int j=0;j<column;j++){
+                QModelIndex index=model->index(i,j);
+               out<<model->data(index).toString()<<" ";
+            }
+            out<<endl;
+        }
+        return true;
+    }
+    return false;
 }

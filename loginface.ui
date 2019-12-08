@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>酒店管理系统</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:url(:/new/prefix1/bg.jpg);</string>
+  </property>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -29,7 +32,7 @@
     <string>酒店管理系统</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>

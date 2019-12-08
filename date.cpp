@@ -258,5 +258,5 @@ int Date::operator-(Date &date){
  }
 
  QString Date::toString(){
-     return QString::number(this->year)+"-"+QString::number(this->month)+"-"+QString::number(this->day);
+     return QString::number(this->year)+"年"+QString::number(this->month)+"月"+QString::number(this->day)+"日";
  }

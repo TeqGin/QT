@@ -6,7 +6,7 @@
 #include"chargeface.h"
 #include"dialog.h"
 #include"guests.h"
-#include"global.h"
+
 #include"domain.h"
 
 namespace Ui {

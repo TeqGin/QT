@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>房间信息</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:url(:/new/prefix1/bg.jpg);</string>
+  </property>
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
@@ -35,6 +38,14 @@
      <height>251</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">background-image:url();
+QLineEdit{
+background:#03a9f4;
+
+color: rgb(255, 255, 255);
+};</string>
+   </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
    </property>
@@ -52,7 +63,9 @@
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-color:#03a9f4;</string>
+background:#03a9f4;
+
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="placeholderText">
      <string>请输入房间号</string>
@@ -95,7 +108,9 @@ color:#03a9f4;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-color:#03a9f4;</string>
+background:#03a9f4;
+
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="placeholderText">
      <string>不填默认为1</string>
@@ -125,7 +140,9 @@ color:#03a9f4;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-color:#03a9f4;</string>
+background:#03a9f4;
+
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="placeholderText">
      <string>请输入房间价格</string>
@@ -142,7 +159,9 @@ color:#03a9f4;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-color:#03a9f4;</string>
+background:#03a9f4;
+
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="placeholderText">
      <string>请填入房间类型</string>
@@ -184,7 +203,10 @@ color:#03a9f4;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius:15px;</string>
+     <string notr="true">border-radius:15px;
+background:#03a9f4;
+
+color: rgb(255, 255, 255);</string>
     </property>
     <item>
      <property name="text">
@@ -226,7 +248,9 @@ color:#03a9f4;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-color:#03a9f4;</string>
+background:#03a9f4;
+
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="placeholderText">
      <string>可不填写</string>

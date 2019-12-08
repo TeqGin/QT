@@ -14,7 +14,8 @@
    <string>注册账号</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(85, 255, 255);
+   <string notr="true">background:url(:/new/prefix1/bg.jpg);
+
 border-radius:15px;</string>
   </property>
   <widget class="QLabel" name="label">
@@ -57,6 +58,9 @@ border-radius:15px;</string>
      <width>331</width>
      <height>81</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image:url();</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -115,8 +119,14 @@ border-radius:15px;
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 9pt &quot;华文行楷&quot;;
-font: 9pt &quot;楷体&quot;;</string>
+    <string notr="true">background-image:url();
+font: 9pt &quot;华文行楷&quot;;
+font: 9pt &quot;楷体&quot;;
+QLineEdit{
+background:#03a9f4;
+color: rgb(255, 255, 255);
+};
+</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -151,8 +161,8 @@ font: 9pt &quot;楷体&quot;;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-background-color: rgb(255, 255, 255);
-color:#03a9f4;</string>
+background:#03a9f4;
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="placeholderText">
      <string>请输入姓名</string>
@@ -169,8 +179,8 @@ color:#03a9f4;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-background-color: rgb(255, 255, 255);
-color:#03a9f4;</string>
+background:#03a9f4;
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="placeholderText">
      <string>请输入账号（身份证号</string>
@@ -213,8 +223,8 @@ color:#03a9f4;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-background-color: rgb(255, 255, 255);
-color:#03a9f4;</string>
+background:#03a9f4;
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
@@ -234,8 +244,8 @@ color:#03a9f4;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-background-color: rgb(255, 255, 255);
-color:#03a9f4;</string>
+background:#03a9f4;
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
@@ -268,8 +278,8 @@ color:#03a9f4;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-background-color: rgb(255, 255, 255);
-color:#03a9f4;</string>
+background:#03a9f4;
+color: rgb(255, 255, 255);</string>
     </property>
     <property name="placeholderText">
      <string>工作人员注册时输入</string>
@@ -306,14 +316,14 @@ color:#03a9f4;</string>
      <rect>
       <x>110</x>
       <y>170</y>
-      <width>101</width>
+      <width>131</width>
       <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">border-radius:15px;
-color: rgb(85, 255, 255);
-background-color: rgb(255, 255, 255);</string>
+background:#03a9f4;
+color: rgb(255, 255, 255);</string>
     </property>
     <item>
      <property name="text">

@@ -13,17 +13,21 @@
   <property name="windowTitle">
    <string>处理房间信息</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background:url(:/new/prefix1/bg.jpg);</string>
+  </property>
   <widget class="QLabel" name="title">
    <property name="geometry">
     <rect>
-     <x>240</x>
+     <x>290</x>
      <y>10</y>
      <width>161</width>
      <height>41</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">font: 9pt &quot;楷体&quot;;
+    <string notr="true">background-image:url();
+font: 9pt &quot;楷体&quot;;
 font: 18pt &quot;AcadEref&quot;;</string>
    </property>
    <property name="text">
@@ -34,10 +38,13 @@ font: 18pt &quot;AcadEref&quot;;</string>
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>30</y>
+     <y>50</y>
      <width>91</width>
      <height>361</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image:url();</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
