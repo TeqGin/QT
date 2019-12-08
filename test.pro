@@ -43,6 +43,7 @@ SOURCES += \
         outtoexcel.cpp \
         person.cpp \
         record.cpp \
+        recorddata.cpp \
         recordsql.cpp \
         room.cpp \
         roomdata.cpp \
@@ -67,6 +68,7 @@ HEADERS += \
         outtoexcel.h \
         person.h \
         record.h \
+        recorddata.h \
         recordsql.h \
         room.h \
         roomdata.h \
@@ -83,6 +85,7 @@ FORMS += \
         dialog.ui \
         loginface.ui \
         mainwindow.ui \
+        recorddata.ui \
         roomdata.ui
 
 # Default rules for deployment.

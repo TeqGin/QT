@@ -22,6 +22,7 @@ public:
 
     friend std::ostream& operator<<(std::ostream& out,Date &date);
     friend std::istream & operator>>(std::istream & in , Date &date);
+    bool operator>(Date & date);
     int getYear();
     int getMonth();
     int getDay();
@@ -31,6 +32,7 @@ public:
     void setDay(int day);
 
     QString toString();
+    Date toDate(QString date);
 };
 
 #endif // DATE_H

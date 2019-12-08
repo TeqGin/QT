@@ -105,3 +105,64 @@ bool Operata::writeIntoTxt(const QAbstractItemModel *model, const QString &fileN
     }
     return false;
 }
+
+int Operata::showRrecordData(QTableView *recordTable,std::vector<Record> recordVector, QDialog *parent, int x, int y){
+    QStandardItemModel * model= new QStandardItemModel;
+
+    //显示所有record数据
+    QStandardItem *item=nullptr;
+
+    for(int i=0;i<recordVector.size();i++){
+
+        QString guestsIdStr=recordVector[i].getGuestsId();
+        item=new QStandardItem(guestsIdStr);
+        model->setItem(i,0,item);
+
+        QString guestsNameStr=recordVector[i].getName();
+        item=new QStandardItem(guestsNameStr);
+        model->setItem(i,1,item);
+
+        QString roomIdStr=QString::number(recordVector[i].getRoomId());
+        item=new QStandardItem(roomIdStr);
+        model->setItem(i,2,item);
+
+        QString roomDiscountStr=QString::number(recordVector[i].getDiscount());
+        item=new QStandardItem(roomDiscountStr);
+        model->setItem(i,3,item);
+
+        QString roomCostStr=QString::number(recordVector[i].getRoomCost());
+        item=new QStandardItem(roomCostStr);
+        model->setItem(i,4,item);
+
+        QString roomTypeStr=recordVector[i].getRoomType();
+        item=new QStandardItem(roomTypeStr);
+        model->setItem(i,5,item);
+
+        QString inDateStr=recordVector[i].getInTime().toString();
+        item=new QStandardItem(inDateStr);
+        model->setItem(i,6,item);
+
+        QString outDateStr=recordVector[i].getOutTime().toString();
+        item=new QStandardItem(outDateStr);
+        model->setItem(i,7,item);
+    }
+
+    recordTable->setParent(parent);
+    //表格横线类型
+    recordTable->setShowGrid(Qt::DotLine);
+    recordTable->setSelectionBehavior ( QAbstractItemView::SelectRows); //设置选择行为，以行为单位
+    recordTable->setModel(model);
+    recordTable->resize(parent->width(),parent->height());
+    recordTable->setStyleSheet("QTableView { border: none;"
+                            "selection-background-color: #8EDE21;"
+                            "color: blue}");
+    recordTable->setGeometry(x,y,parent->width(),parent->height());
+    QItemDelegate* readOnlyDelegate = new QItemDelegate();
+    recordTable->setItemDelegate(readOnlyDelegate);
+    recordTable->show();
+    recordTable->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    QStringList labels = QObject::trUtf8("客户id,客户名,房号,房间折扣,房间价格,房间类型,入住时间,退房时间").simplified().split(",");
+     model->setHorizontalHeaderLabels(labels);
+
+     return 0;
+}

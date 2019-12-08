@@ -8,11 +8,6 @@
 
 class Record:public Room,public Person
 {
-private:
-    int recordId;
-    Date inTime;
-    Date outTime;
-    int flag;//0为该记录无效，1为有效
 public:
     Record(QString guestsId,QString guestsName,int roomId,double roomDiscount,
            double roomCost,QString roomType,Date inTime,Date outTime,int flag);
@@ -24,6 +19,12 @@ public:
     void setRecord(int recordId);
     int getFlag();
     void setFlag(int flag);
+
+private:
+    int recordId;
+    Date inTime;
+    Date outTime;
+    int flag;//0为该记录无效，1为有效
 };
 
 #endif // RECORD_H

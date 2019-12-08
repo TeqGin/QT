@@ -1,6 +1,7 @@
 #include "date.h"
 #include<time.h>
 #include<QString>
+#include<QDebug>
 
 Date::Date(){
     time_t timep;
@@ -17,6 +18,24 @@ Date::Date(int year,int month,int day){
     this->month=month;
     this->day=day;
 }
+
+bool Date::operator>(Date &date){
+
+    if(this->year>date.year){
+        return true;
+    }else{
+        if(this->year==date.year&&this->month>date.month){
+            return true;
+        }else{
+            if(this->month==date.month&&this->day>date.day){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
 
 Date & Date::operator+(int day){
     if(day>0){
@@ -259,4 +278,13 @@ int Date::operator-(Date &date){
 
  QString Date::toString(){
      return QString::number(this->year)+"年"+QString::number(this->month)+"月"+QString::number(this->day)+"日";
+ }
+
+ Date Date::toDate(QString date){
+
+     int date2Year=date.section('-',0,0).toInt();
+     int date2Month=date.section('-',1,1).toInt();
+     int date2Day=date.section('-',2,2).toInt();
+
+     return Date(date2Year,date2Month,date2Day);
  }

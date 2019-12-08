@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include<QTableView>
+#include"recorddata.h"
 class ChargeFace;
 
 namespace Ui {
@@ -23,10 +24,13 @@ private slots:
     void outputData();
 
 
+    void on_selectReport_clicked();
+
 private:
     QTableView *roomTable=new QTableView;
     Ui::RoomData *ui;
     ChargeFace *chargeFace;
+    recordData *recordDataPtr;
     int x=110;
     int y=85;
 };

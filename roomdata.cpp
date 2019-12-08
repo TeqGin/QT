@@ -114,6 +114,7 @@ void RoomData::submitSelect(){
         operata.showRoomData(roomTable,roomVector,this,x,y);
     }else{
         QMessageBox::warning(this,"出错了","出错了！");
+        return ;
     }
     QMessageBox::about(this,"查找成功","查找成功！");
     return ;
@@ -131,4 +132,13 @@ void RoomData::outputData(){
     }else{
         QMessageBox::warning(this,"失败","导出失败");
     }
+}
+
+void RoomData::on_selectReport_clicked()
+{
+    this->recordDataPtr=new recordData;
+    this->close();
+    recordDataPtr->creatTable();
+    recordDataPtr->show();
+    recordDataPtr->exec();
 }

@@ -54,7 +54,7 @@ bool RecordSql::update(Record record){
 }
 
 std::vector<Record> RecordSql::findAllRecord(){
-    QSqlDatabase db;
+    QSqlDatabase db=dbutil.getDatabase();
     QString sql="select * from record";
     QSqlQuery query;
     std::vector<Record> recordVector;
@@ -66,10 +66,10 @@ std::vector<Record> RecordSql::findAllRecord(){
             int date1Day=date1.section('-',2,2).toInt();
             Date inTime(date1Year,date1Month,date1Day);
 
-            QString date2=query.value("in_time").toString();
-            int date2Year=date1.section('-',0,0).toInt();
-            int date2Month=date1.section('-',1,1).toInt();
-            int date2Day=date1.section('-',2,2).toInt();
+            QString date2=query.value("out_date").toString();
+            int date2Year=date2.section('-',0,0).toInt();
+            int date2Month=date2.section('-',1,1).toInt();
+            int date2Day=date2.section('-',2,2).toInt();
             Date outTime(date2Year,date2Month,date2Day);
 
             Record record(
@@ -87,11 +87,12 @@ std::vector<Record> RecordSql::findAllRecord(){
         }
     }
     db.close();
+    qDebug()<<recordVector.size();
     return recordVector;
 }
 
 std::vector<Record> RecordSql::findRecordByRoomIdAndGuestsIdAndFlag(int roomId, QString guestsId, int flag){
-       QSqlDatabase db;
+       QSqlDatabase db=dbutil.getDatabase();
        QString sql="select * from record where room_id=? and guests_id=? and flag=?";
        QSqlQuery query;
        std::vector<Record> recordVector;
@@ -100,7 +101,6 @@ std::vector<Record> RecordSql::findRecordByRoomIdAndGuestsIdAndFlag(int roomId, 
        query.addBindValue(guestsId);
        query.addBindValue(flag);
        if(query.exec()){
-           while(query.next()){
                while(query.next()){
                    QString date1=query.value("in_time").toString();
                    int date1Year=date1.section('-',0,0).toInt();
@@ -128,7 +128,6 @@ std::vector<Record> RecordSql::findRecordByRoomIdAndGuestsIdAndFlag(int roomId, 
                    recordVector.push_back(record);
            }
        }
-   }
            db.close();
            return recordVector;
 }
