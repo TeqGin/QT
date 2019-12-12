@@ -5,7 +5,7 @@
 #include<QDebug>
 #include<QDateTime>
 
-
+//这个单词打错了。。。
 Operata::Operata()
 {
 

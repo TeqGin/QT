@@ -19,6 +19,7 @@ Date::Date(int year,int month,int day){
     this->day=day;
 }
 
+//重载date>date运算
 bool Date::operator>(Date &date){
 
     if(this->year>date.year){
@@ -36,7 +37,7 @@ bool Date::operator>(Date &date){
 }
 
 
-
+//重载date+day运算
 Date & Date::operator+(int day){
     if(day>0){
         int months[]={31,28,31,30,31,30,31,31,30,31,30,31};
@@ -95,7 +96,7 @@ Date & Date::operator+(int day){
         return *this;
 }
 }
-
+//重载date-day运算
 Date & Date::operator-(int day){
     if(day<0){
         int months[]={31,28,31,30,31,30,31,31,30,31,30,31};
@@ -157,7 +158,7 @@ Date & Date::operator-(int day){
 
 /*
  * @problem
- * 如何计算相差的时间
+ * 如何计算相差的时间（重载(date-date)-运算符）
  * @way
  *  @one
  *  还原成距离1970-1-1的时间，然后相减。
@@ -248,7 +249,7 @@ int Date::operator-(Date &date){
     return distanche;
 }
 
-
+//重载输出流运算符
  std::ostream& operator <<(std::ostream& out,Date &date){
      out<<date.year<<"-"<<date.month<<"-"<<date.day<<std::endl;
     return out;
@@ -280,11 +281,12 @@ int Date::operator-(Date &date){
      return QString::number(this->year)+"年"+QString::number(this->month)+"月"+QString::number(this->day)+"日";
  }
 
+ //把形如yyyy-mm-ddd的字符串转化成Date类型
  Date Date::toDate(QString date){
 
-     int date2Year=date.section('-',0,0).toInt();
-     int date2Month=date.section('-',1,1).toInt();
-     int date2Day=date.section('-',2,2).toInt();
+     int Year=date.section('-',0,0).toInt();
+     int Month=date.section('-',1,1).toInt();
+     int Day=date.section('-',2,2).toInt();
 
-     return Date(date2Year,date2Month,date2Day);
+     return Date(Year,Month,Day);
  }

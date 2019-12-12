@@ -21,7 +21,7 @@ void recordData::creatTable(){
     std::vector<Record> recordVector=recordSql.findAllRecord();
     operata.showRrecordData(this->recordTable,recordVector,this,x,y);
 }
-
+//查找房间信息
 void recordData::on_selectRoomData_clicked()
 {
     this->roomData=new RoomData;
@@ -29,7 +29,7 @@ void recordData::on_selectRoomData_clicked()
     roomData->creatTable();
     roomData->show();
 }
-
+//数据导出
 void recordData::on_dataOutput_clicked()
 {
     if(operata.writeIntoTxt(this->recordTable->model(),"../"+Date().toString()+"导出的报表数据"+".txt")){
@@ -45,7 +45,7 @@ void recordData::on_returnMain_clicked()
     this->chargeFace=new ChargeFace;
     chargeFace->show();
 }
-
+//条件查询
 void recordData::on_submit_clicked()
 {
     QString select=this->ui->find->currentText();

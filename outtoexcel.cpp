@@ -1,7 +1,7 @@
 #include "outtoexcel.h"
 #include<QFile>
 #include<QDir>
-
+//由于导出excel会直接崩溃，所以这些方法没有用到
 outToExcel::outToExcel()
 {
 

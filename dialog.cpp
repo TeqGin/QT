@@ -45,6 +45,7 @@ void setPassMessageBox(QString text){
      return;
 }
 
+//单击提交按钮
 void Dialog::submit(){
     QString name=this->ui->name->text();
     QString id=this->ui->id->text();

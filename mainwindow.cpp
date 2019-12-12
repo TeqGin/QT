@@ -26,21 +26,6 @@ MainWindow::MainWindow(QWidget *parent) :
     //这是一个简单的connect点击操作
     connect(this->ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(login()));
     connect(this->ui->registered,SIGNAL(clicked(bool)),this,SLOT(registered()));
-//    this->ui->pushButton->setStyleSheet("QPushButton{"
-//                                        "font-size:12px;"
-//                                          " border-radius:2px;"
-//                                           "color:rgba(51,51,51,1);"
-//                                          " background:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(242,242,242,1), stop:1 rgba(255,255,255,1));"
-//                                          "border:1px solid rgba(221,221,221,1); "
-//                                        "}");
-//    this->ui->registered->setStyleSheet("QPushButton{"
-//                                        "font-size:12px;"
-//                                          " border-radius:2px;"
-//                                           "color:rgba(51,51,51,1);"
-//                                          " background:qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 rgba(242,242,242,1), stop:1 rgba(255,255,255,1));"
-//                                          "border:1px solid rgba(221,221,221,1); "
-//                                        "}");
-
 
 }
 

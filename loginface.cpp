@@ -14,6 +14,7 @@ LoginFace::~LoginFace()
 {
     delete ui;
 }
+//实例化tableView
 void LoginFace::creatTable(){
     Operata operata;
     RoomSql roomSql;

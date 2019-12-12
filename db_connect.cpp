@@ -37,6 +37,8 @@
         }
         return db;
     }
+   //传入sql以查询数据库，然后返回query，该方法适用于不需要其他参数的查询语句
+   //对于传入sql的方法，由于有时需要用?来占位，导致参数长度不一致，所以这个方法用的不多
     QSqlQuery DButil::Statement(QString sql){
             QSqlDatabase db= getDatabase();
             QSqlQuery query;
