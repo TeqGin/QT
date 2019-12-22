@@ -9,7 +9,7 @@
 1.QT:               QT creator4.9.0(Qt 5.12.2 (MSVC 2017, 32 bit))（需要添加MySQL 32位驱动）<br>
 2.MySQL:            MySQL-8.0.11-winx64<br>
 3.数据库图形化界面: navicat for mysql 12.1.20(64位)<br>
-3.编译方式：        QT 5.12.3 MinGW 64-bit release<br>
+3.编译方式：        QT 5.12.3 MinGW 64-bit release编译完以后需要在项目release目录下加入MySQL64位驱动  <br>
 4.配置环境变量path：...\5.12.3\mingw73_64\bin;<br>
    # 记录遇到的一些问题 -
 
