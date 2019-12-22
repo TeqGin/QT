@@ -4,6 +4,13 @@
 
    >第一次使用qt+MySQL进行开发，上一个项目做的是java项目，
 转过来写c++的时候有诸多不适，所以开发的时候很多地方写的不是很好。
+   # 项目环境
+   >
+1.QT:               QT creator4.9.0(Qt 5.12.2 (MSVC 2017, 32 bit))（需要添加MySQL 32位驱动）<br>
+2.MySQL:            MySQL-8.0.11-winx64<br>
+3.数据库图形化界面: navicat for mysql 12.1.20(64位)<br>
+3.编译方式：        QT 5.12.3 MinGW 64-bit release<br>
+4.配置环境变量path：...\5.12.3\mingw73_64\bin;<br>
    # 记录遇到的一些问题 -
 
    ### 1.数据存储问题
