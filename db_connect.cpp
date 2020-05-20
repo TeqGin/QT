@@ -20,8 +20,8 @@
                 db.setHostName("localhost");
                 db.setPort(3306);
                 db.setDatabaseName("home_work_cpp");
-                db.setUserName("root");
-                db.setPassword("60870736a");
+                db.setUserName("xxxx");
+                db.setPassword("xxxxx");
 
                 if(!db.open()){
                      std::exception r;
